@@ -50,6 +50,7 @@ function calculate() {
       break;
     case "x":
       resultValue = firstOperand * secondOperand;
+      break;
     case "÷":
       resultValue = firstOperand / secondOperand;
       break;
@@ -58,7 +59,7 @@ function calculate() {
   }
 
   if (resultValue.toString().split(".")[1]?.length > 5) {
-    currentNumber = parseFloat(resultValue.toFixerd(5)).toString();
+    currentNumber = parseFloat(resultValue.toFixed(5)).toString();
   } else {
     currentNumber = resultValue.toString();
   }
@@ -67,6 +68,28 @@ function calculate() {
   firstOperand = null;
   restart = true;
   percentageValue = null;
+  updateResult();
+}
+
+function clearCalculator() {
+  currentNumber = "";
+  firstOperand = null;
+  operator = null;
+  updateResult(true);
+}
+
+function setPercentage() {
+  let result = parseFloat(currentNumber) / 100;
+
+  if (["+", "-"].includes(operator)) {
+    result = result * (firstOperand || 1);
+  }
+
+  if (result.toString().split(".")[1]?.length > 5) {
+    result = result.toFixed(5).toString();
+  }
+
+  currentNumber = result.toString();
   updateResult();
 }
 
@@ -83,6 +106,15 @@ buttons.forEach((button) => {
       setOperator(buttonText);
     } else if (buttonText === "=") {
       calculate();
+    } else if (buttonText === "C") {
+      clearCalculator();
+    } else if (buttonText === "±") {
+      currentNumber = (
+        parseFloat(currentNumber || firstOperand) * -1
+      ).toString();
+      updateResult();
+    } else if (buttonText === "%") {
+      setPercentage();
     }
   });
 });
