@@ -8,51 +8,57 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <title>Multiplicação - Exercício de Matemática</title>
+    <title>Exercício de Matemática</title>
   </head>
   <body>
-    <main id="container">
-      <header id="cabecario">
-        <a href="/Exercícios-de-matemática/index.html">
-          <i class="fa-solid fa-house"></i>
-        </a>
-        <h1>Multiplicação - Exercício de Matemática</h1>
+    <main class="container">
+      <header class="cabecalho">
+        <h1>Exercício de Matemática - multiplicação</h1>
       </header>
 
-      <section id="exercicio">
-        <form action="">
-          <span class="numero1"></span> + <span class="numero2"></span>
-          <input type="number" name="respostaUsuario" id="respostaUsuario" />
-        </form>
-      </section>
+      <form>
+        <label for="respostaUsuario">
+          <span class="numero1"></span> <i class="fa-solid fa-xmark"></i>
+          <span class="numero2"></span>
+        </label>
+        <input type="number" id="respostaUsuario" name="respostaUsuario" />
+        <button type="submit" class="btn">Confirmar</button>
+      </form>
 
       <nav>
-        <ul id="containerOpcoes">
+        <ul class="opcoes">
           <li>
             <a href="soma.html" aria-label="Exercício de Soma">
-              <h4>Soma</h4>
+              <span>Soma</span>
               <i class="fa-solid fa-plus"></i>
             </a>
           </li>
           <li>
             <a href="subtracao.html" aria-label="Exercício de Subtração">
-              <h4>Subtração</h4>
+              <span>Subtração</span>
               <i class="fa-solid fa-minus"></i>
             </a>
           </li>
           <li>
             <a href="divisao.html" aria-label="Exercício de Divisão">
-              <h4>Divisão</h4>
+              <span>Divisão</span>
               <i class="fa-solid fa-divide"></i>
+            </a>
+          </li>
+          <li>
+            <a href="/Exercícios-de-matemática/index.html">
+              <span>Menu inicial</span>
+              <i class="fa-solid fa-house"></i>
             </a>
           </li>
         </ul>
       </nav>
     </main>
+
+    <script src="../js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/93585734e9.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script src="../js/script.js"></script>
-  <script
-    src="https://kit.fontawesome.com/93585734e9.js"
-    crossorigin="anonymous"
-  ></script>
 </html>
