@@ -9,8 +9,10 @@ let numeroGerado2;
 let operacao = document.body.dataset.operacao;
 
 let criarNumero = () => {
-  numeroGerado1 = Math.floor(Math.random() * 10);
-  numeroGerado2 = Math.floor(Math.random() * 10);
+  do {
+    numeroGerado1 = Math.floor(Math.random() * 10);
+    numeroGerado2 = Math.floor(Math.random() * 10);
+  } while (operacao === "divisao" && numeroGerado1 < numeroGerado2);
 
   numero1.textContent = numeroGerado1;
   numero2.textContent = numeroGerado2;
@@ -33,6 +35,11 @@ let calcularResultado = (event) => {
       break;
     case "multiplicacao":
       resultado = numeroGerado1 * numeroGerado2;
+      break;
+    case "divisao":
+      // só evita divisão por zero
+      resultado = numeroGerado2 !== 0 ? numeroGerado1 / numeroGerado2 : 0;
+      resultado = Number(resultado.toFixed(2));
       break;
   }
 
