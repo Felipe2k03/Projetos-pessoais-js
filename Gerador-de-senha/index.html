@@ -11,48 +11,48 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container">
+    <main id="container">
       <i class="fa-solid fa-lock icon"></i>
       <h1 class="title">Gerar senha</h1>
 
-      <section class="form">
-        <p>
+      <form action="" id="passwordContainer">
+        <div>
           <label for="length">
             <input type="number" id="length" min="1" value="8" />
             Quantidade de caracteres
           </label>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="uppercase">
             <input type="checkbox" id="uppercase" />
             Incluir letra maiúscula
           </label>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="lowercase">
             <input type="checkbox" id="lowercase" />
             Incluir letra minúscula
           </label>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="numbers">
             <input type="checkbox" id="numbers" />
             Incluir número
           </label>
-        </p>
+        </div>
 
-        <p>
+        <div>
           <label for="symbols">
             <input type="checkbox" id="symbols" />
             Incluir caractere especial
           </label>
-        </p>
+        </div>
 
-        <button id="generate" class="btn">Gerar senha</button>
-      </section>
+        <button type="submit" id="generate" class="btn">Gerar senha</button>
+      </form>
     </main>
   </body>
   <script src="script.js"></script>
