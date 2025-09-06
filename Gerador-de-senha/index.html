@@ -15,7 +15,7 @@
       <i class="fa-solid fa-lock icon"></i>
       <h1 class="title">Gerar senha</h1>
 
-      <form action="" id="passwordContainer">
+      <form action="" id="passwordForm">
         <div>
           <label for="length">
             <input type="number" id="length" min="1" value="8" />
@@ -50,6 +50,14 @@
             Incluir caractere especial
           </label>
         </div>
+
+        <p>
+          <label for="result">Senha gerada:</label>
+          <input type="text" id="result" readonly />
+          <button type="button" id="copy" class="btn">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </p>
 
         <button type="submit" id="generate" class="btn">Gerar senha</button>
       </form>

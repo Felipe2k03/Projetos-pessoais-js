@@ -1,4 +1,4 @@
-const form = document.querySelector("#passwordContainer");
+const form = document.querySelector("#passwordForm");
 
 function generatePassword() {
   const length = document.querySelector("#length").value;
@@ -16,7 +16,7 @@ function generatePassword() {
   );
 
   if (selected.length === 0) {
-    alert("Selecione pelo menos uma opção");
+    alert("Selecione pelo menos um tipo de caractere!");
     return "";
   }
 
@@ -34,5 +34,19 @@ function generatePassword() {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const password = generatePassword();
+  document.querySelector("#result").value = password;
   console.log(password);
+});
+
+const copyBtn = document.querySelector("#copy");
+
+copyBtn.addEventListener("click", () => {
+  const passwordField = document.querySelector("#result");
+
+  if (passwordField.value.trim() === "") {
+    alert("Nenhuma senha para copiar!");
+    return;
+  }
+
+  navigator.clipboard.writeText(passwordField.value);
 });
