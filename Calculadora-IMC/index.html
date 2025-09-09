@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/93585734e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <h1>Calculadora IMC</h1>
+    </header>
+
+    <main>
+      <form id="imc-form">
+        <!-- Sexo -->
+        <fieldset class="cards-input">
+          <legend>Sexo</legend>
+          <label>
+            <input type="radio" name="gender" value="female" />
+            Mulher
+          </label>
+          <label>
+            <input type="radio" name="gender" value="male" />
+            Homem
+          </label>
+        </fieldset>
+
+        <!-- Peso -->
+        <section class="cards-input">
+          <label for="weight">Digite seu peso (kg):</label>
+          <input
+            type="number"
+            id="weight"
+            name="weight"
+            placeholder="70"
+            step="0.1"
+            required
+          />
+        </section>
+
+        <!-- Altura -->
+        <section class="cards-input">
+          <label for="height">Digite sua altura (m):</label>
+          <input
+            type="number"
+            id="height"
+            name="height"
+            placeholder="1.70"
+            step="0.01"
+            required
+          />
+        </section>
+
+        <!-- Idade -->
+        <section class="cards-input">
+          <label for="age">Digite sua idade:</label>
+          <input type="number" id="age" name="age" placeholder="22" required />
+        </section>
+
+        <!-- Botão -->
+        <button type="submit" id="generate">Calcular</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>Desenvolvido por <strong>Luis Felipe</strong></p>
+      <section class="social-medias">
+        <a
+          href="https://www.linkedin.com/in/luis-felipe-xavier-84245920b/"
+          aria-label="LinkedIn"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/Felipe2k03" aria-label="GitHub"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a href="https://wa.me/5524981862271" aria-label="WhatsApp"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+      </section>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
