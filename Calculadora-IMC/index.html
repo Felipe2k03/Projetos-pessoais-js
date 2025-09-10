@@ -1,72 +1,124 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculadora IMC</title>
+    <!-- link css -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- link fontawesome -->
     <script
       src="https://kit.fontawesome.com/93585734e9.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
+    <!-- cabeçario -->
     <header>
       <h1>Calculadora IMC</h1>
     </header>
+    <main class="container">
+      <!-- lado esquerdo -->
+      <figure class="left"></figure>
 
-    <main>
-      <form id="imc-form">
-        <!-- Sexo -->
-        <fieldset class="cards-input">
-          <legend>Sexo</legend>
+      <!-- formulario lado direito -->
+      <form action="">
+        <span
+          >O IMC, ou Índice de Massa Corporal, é uma ferramenta usada por
+          profissionais da saúde para estimar a quantidade de gordura corporal a
+          partir da avaliação da relação entre peso e altura. O IMC serve como
+          uma avaliação inicial para verificar se a pessoa está no peso adequado
+          ou se está acima ou abaixo do peso ideal.</span
+        >
+        <!-- genero -->
+        <section class="cardsInput">
           <label>
             <input type="radio" name="gender" value="female" />
-            Mulher
+            mulher
           </label>
           <label>
             <input type="radio" name="gender" value="male" />
             Homem
           </label>
-        </fieldset>
+        </section>
 
-        <!-- Peso -->
-        <section class="cards-input">
-          <label for="weight">Digite seu peso (kg):</label>
+        <!-- peso -->
+        <section class="cardsInput">
+          <label for="weight">Digite o seu peso (kg):</label>
           <input
             type="number"
-            id="weight"
             name="weight"
+            id="weight"
             placeholder="70"
             step="0.1"
             required
           />
         </section>
 
-        <!-- Altura -->
-        <section class="cards-input">
-          <label for="height">Digite sua altura (m):</label>
+        <!-- idade -->
+        <section class="cardsInput">
+          <label for="height">Digite a sua altura (m)</label>
           <input
             type="number"
             id="height"
             name="height"
             placeholder="1.70"
-            step="0.01"
+            step="0.1"
             required
           />
         </section>
 
-        <!-- Idade -->
-        <section class="cards-input">
-          <label for="age">Digite sua idade:</label>
-          <input type="number" id="age" name="age" placeholder="22" required />
+        <!-- idade -->
+        <section class="cardsInput">
+          <label for="age">Digite sua idade</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            placeholder="22"
+            step="0.1"
+            required
+          />
+          <button class="generate" type="submit">Calcular</button>
         </section>
+        <section class="containerResult">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>IMC</th>
+                <th>Peso</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="magreza">
+                <td>Magreza</td>
+                <td>&lt; 18.5</td>
+                <td>&lt; 56.7 kg</td>
+              </tr>
+              <tr id="normal">
+                <td>Normal</td>
+                <td>18.5 a 24.9</td>
+                <td>56.7 a 76.3 kg</td>
+              </tr>
+              <tr id="sobrepeso">
+                <td>Sobrepeso</td>
+                <td>24.9 a 30</td>
+                <td>76.3 a 91.9 kg</td>
+              </tr>
+              <tr id="obesidade">
+                <td>Obesidade</td>
+                <td>&gt; 30</td>
+                <td>&gt; 91.9 kg</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+</section>
 
-        <!-- Botão -->
-        <button type="submit" id="generate">Calcular</button>
       </form>
     </main>
-
+    <!-- rodape -->
     <footer>
       <p>Desenvolvido por <strong>Luis Felipe</strong></p>
       <section class="social-medias">
@@ -83,7 +135,6 @@
         ></a>
       </section>
     </footer>
-
-    <script src="assets/js/script.js"></script>
   </body>
+  <script src="assets/js/script.js"></script>
 </html>
