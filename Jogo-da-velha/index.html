@@ -4,30 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>Document</title>
+
+    <script
+      src="https://kit.fontawesome.com/93585734e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Jogo da Velha</title>
   </head>
   <body>
-    <main>
+    <header>
       <h1>Jogo da Velha</h1>
-      <hr />
-      <section class="board">
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-        <button class="cell"></button>
-      </section>
+    </header>
 
-      <div class="winning-message">
-        <p></p>
-        <button></button>
+    <main>
+      <!-- Indicador de jogador atual -->
+      <div class="current-player" aria-live="polite" id="currentPlayer">
+        Vez do jogador: X
       </div>
-      <button>Reiniciar</button>
+
+      <!-- Tabuleiro do jogo -->
+      <div class="game">
+        <section class="board" aria-label="Tabuleiro do Jogo da Velha">
+          <button class="cell" data-i="0" aria-label="Célula 1"></button>
+          <button class="cell" data-i="1" aria-label="Célula 2"></button>
+          <button class="cell" data-i="2" aria-label="Célula 3"></button>
+          <button class="cell" data-i="3" aria-label="Célula 4"></button>
+          <button class="cell" data-i="4" aria-label="Célula 5"></button>
+          <button class="cell" data-i="5" aria-label="Célula 6"></button>
+          <button class="cell" data-i="6" aria-label="Célula 7"></button>
+          <button class="cell" data-i="7" aria-label="Célula 8"></button>
+          <button class="cell" data-i="8" aria-label="Célula 9"></button>
+        </section>
+
+        <!-- Placar -->
+        <div class="scoreContainer">
+          <div class="playerScore">
+            <h2>Jogador X</h2>
+            <output id="scoreX" class="scoreValue">0</output>
+          </div>
+
+          <div class="player-score">
+            <h2>Jogador O</h2>
+            <output id="scoreY" class="scoreValue">0</output>
+          </div>
+        </div>
+
+        <!-- Botão de reiniciar -->
+        <button class="btn" id="resetBtn">Reiniciar Jogo</button>
+      </div>
     </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>Desenvolvido por <strong>Luis Felipe</strong></p>
+      <div class="social-medias">
+        <a
+          href="https://www.linkedin.com/in/luis-felipe-xavier-84245920b/"
+          aria-label="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Felipe2k03" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://wa.me/5524981862271" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="assets/js/script.js"></script>
   </body>
-  <script src="assets/js/script.js"></script>
 </html>
