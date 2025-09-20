@@ -6,7 +6,7 @@
 }
 
 :root {
-  --size: min(90vmin, 520px); /* aumentei o tamanho máximo */
+  --size: min(90vmin, 520px);
   --gap: 10px;
   --bg: #f7f7f8;
   --card: #ffffff;
@@ -70,12 +70,14 @@ header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(32px, 8vmin, 80px);
+  font-size: clamp(28px, 6vmin, 72px);
   font-weight: 700;
   cursor: pointer;
   user-select: none;
   border: 2px solid rgba(0,0,0,0.06);
   transition: background 0.2s, transform 0.1s;
+  aspect-ratio: 1 / 1; /*mantem o os blocos quadrados */
+  width: 100%;
 }
 
 .cell:hover {
@@ -84,6 +86,12 @@ header h1 {
 
 .cell:active {
   transform: scale(0.97);
+}
+
+.winning-cell {
+  background-color: rgba(11, 95, 255, 0.2);
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(11, 95, 255, 0.3);
 }
 
 .scoreContainer {
