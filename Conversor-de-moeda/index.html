@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Moeda</title>
+    <link rel="stylesheet" href="assets/Css/styles.css" />
+  </head>
+  <body>
+    <main class="container" role="main">
+      <article class="card" aria-labelledby="title">
+        <div class="header">
+          <div class="logo" aria-hidden="true">R$</div>
+          <div>
+            <h1 id="title">Conversor de Moedas</h1>
+            <p class="lead">
+              Converta valores entre moedas — futuramnete integrado com API
+            </p>
+          </div>
+        </div>
+
+        <form id="currency-converter" autocomplete="off" novalidate>
+          <div class="form-grid" role="group" aria-label="Campos do conversor">
+            <div class="field">
+              <label for="amount">Valor</label>
+              <input
+                id="amount"
+                name="amount"
+                type="number"
+                inputmode="decimal"
+                step="0.01"
+                min="0"
+                placeholder="0.00"
+                aria-describedby="amount-help"
+                required
+              />
+              <small id="amount-help" class="muted"
+                >Digite o valor que deseja converter.</small
+              >
+            </div>
+
+            <div class="field">
+              <label for="from-currency">De (moeda)</label>
+              <select
+                id="from-currency"
+                name="from"
+                aria-label="Moeda de origem"
+              >
+                <option value="BRL" selected>BRL — Real (R$)</option>
+                <option value="USD">USD — Dólar (US$)</option>
+                <option value="EUR">EUR — Euro (€)</option>
+                <option value="GBP">GBP — Libra (£)</option>
+                <option value="JPY">JPY — Iene (¥)</option>
+                <option value="ARS">ARS — Peso Argentino ($)</option>
+                <option value="CAD">CAD — Dólar Canadense ($)</option>
+                <option value="AUD">AUD — Dólar Australiano ($)</option>
+                <option value="CHF">CHF — Franco Suíço (CHF)</option>
+                <option value="CNY">CNY — Yuan (¥)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="to-currency">Para (moeda)</label>
+              <select id="to-currency" name="to" aria-label="Moeda destino">
+                <option value="USD">USD — Dólar (US$)</option>
+                <option value="BRL">BRL — Real (R$)</option>
+                <option value="EUR" selected>EUR — Euro (€)</option>
+                <option value="GBP">GBP — Libra (£)</option>
+                <option value="JPY">JPY — Iene (¥)</option>
+                <option value="ARS">ARS — Peso Argentino ($)</option>
+                <option value="CAD">CAD — Dólar Canadense ($)</option>
+                <option value="AUD">AUD — Dólar Australiano ($)</option>
+                <option value="CHF">CHF — Franco Suíço (CHF)</option>
+                <option value="CNY">CNY — Yuan (¥)</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="precision">Casas decimais</label>
+              <select
+                id="precision"
+                name="precision"
+                aria-label="Casas decimais"
+              >
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button type="submit" class="btn primary">Converter</button>
+            <button type="reset" class="btn ghost">Limpar</button>
+          </div>
+
+          <div class="result" aria-live="polite" aria-atomic="true">
+            <p id="output">Resultado: —</p>
+            <div class="meta">
+              <p class="muted">Taxa usada: <strong id="rate">—</strong></p>
+              <div class="chips" aria-hidden="true">
+                <span class="chip">1 USD = 5.00 BRL</span>
+                <span class="chip">1 EUR = 5.40 BRL</span>
+                <span class="chip">1 GBP = 6.20 BRL</span>
+              </div>
+            </div>
+
+            <p class="muted" style="margin-top: 0.6rem">
+              Última atualização: <time id="updated">—</time>
+            </p>
+          </div>
+        </form>
+      </article>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
