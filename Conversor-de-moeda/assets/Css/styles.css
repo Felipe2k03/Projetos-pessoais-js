@@ -170,7 +170,6 @@ select:focus {
   font-weight: 500;
 }
 
-/* Animação */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -179,5 +178,28 @@ select:focus {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .card{
+    height: 100%;
+    width: 100%;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }}
+
+  @media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }
