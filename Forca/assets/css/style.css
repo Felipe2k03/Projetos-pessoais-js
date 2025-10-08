@@ -1,16 +1,339 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+:root {
+    --blue-color: #0d79c7;
+    --white-color: #f1f1f1;
+    --green-color: #1ec943;
+    --green-hover: #17a036;
+    --green-active: #12852c;
+    --grey-color: #525763;
+    --dark-color: #2d3748;
+    --footer-bg: rgba(0, 0, 0, 0.3);
+    --border: 1px solid #ccc;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     min-height: 100vh;
     font-family: "Orbitron", sans-serif;
+    background: linear-gradient(135deg, var(--blue-color), var(--grey-color));
+    padding: 20px;
+    color: var(--white-color);
+    position: relative;
+    padding-bottom: 100px;
+}
+
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--white-color);
+}
+
+.newGame {
+    background-color: var(--green-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow);
+}
+
+.newGame:hover {
+    background-color: var(--green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.newGame:active {
+    background-color: var(--green-active);
+    transform: translateY(0);
+}
+
+main {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Imagem da Forca */
+.contentImg {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.contentImg img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background-color: var(--white-color);
+    padding: 10px;
+}
+
+.content {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Palavra a Ser Adivinhada */
+.guessWord {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid var(--white-color);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+/* Dica */
+.clue {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--white-color);
+    font-style: italic;
+}
+
+/* Container dos Botões das Letras */
+.btns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 2px solid var(--white-color);
+}
+
+/* Botões das Letras */
+.btns button {
+    background-color: var(--green-color);
+    color: white;
+    border: none;
+    padding: 12px 5px;
+    font-size: 1.1rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: var(--shadow);
+}
+
+.btns button:hover {
+    background-color: var(--green-hover);
+    transform: scale(1.05);
+}
+
+.btns button:active {
+    background-color: var(--green-active);
+    transform: scale(0.95);
+}
+
+.btns button:disabled {
+    background-color: var(--grey-color);
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.6;
+}
+
+/* rodapé */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--footer-bg);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+footer p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+}
+
+footer strong {
+    color: var(--green-color);
+    font-weight: 900;
+}
+
+.social-medias {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-medias a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 1.3rem;
+}
+
+.social-medias a:hover {
+    background-color: var(--green-color);
+    transform: translateY(-3px) scale(1.1);
+    border-color: var(--white-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-medias a:active {
+    transform: translateY(-1px) scale(1.05);
+}
+
+/* detalhes */
+.social-medias a:nth-child(1):hover {
+    background-color: #0077b5;
+}
+
+.social-medias a:nth-child(2):hover {
+    background-color: #333;
+}
+
+.social-medias a:nth-child(3):hover {
+    background-color: #25D366;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .guessWord {
+        font-size: 2rem;
+        letter-spacing: 6px;
+    }
+    
+    .btns {
+        grid-template-columns: repeat(7, 1fr);
+    }
+    
+    .btns button {
+        padding: 10px 3px;
+        font-size: 1rem;
+    }
+    
+    footer {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .social-medias {
+        gap: 15px;
+    }
+    
+    .social-medias a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .guessWord {
+        font-size: 1.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .btns {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
+    .newGame {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+    
+    .social-medias {
+        gap: 12px;
+    }
+    
+    .social-medias a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+    
+    body {
+        padding-bottom: 90px;
+    }
 }

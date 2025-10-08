@@ -11,7 +11,7 @@ init();
 
 function init() {
   indexImg = 1;
-  img.src = "img1.png";
+  img.src = "assets/img/img1.png";
 
   generateButtons();
 }
