@@ -8,5 +8,10 @@ const words = [
   { word: "Calopsita", clue: "passaro que assobia" },
   { word: "Gato", clue: " animal peludo de belos olhos" },
   { word: "Elefante", clue: "Animal cinza de longa tromba" },
-  { word: "GOlfinho", clue: "Animal marinho super inteligente" },
+  { word: "Golfinho", clue: "Animal marinho super inteligente" },
 ];
+
+export default function getWord() {
+  const index = Math.floor(Math.random() * words.length); //aproximadamente 10% de chance de cada palavra ser sorteada.
+  return words[index];
+}
