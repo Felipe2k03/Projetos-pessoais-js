@@ -9,6 +9,10 @@ let indexImg;
 
 init();
 
+btnNew.addEventListener("click", () => {
+  init();
+});
+
 function init() {
   indexImg = 1;
   img.src = "assets/img/img1.png";
