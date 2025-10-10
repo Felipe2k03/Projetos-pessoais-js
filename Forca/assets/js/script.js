@@ -33,6 +33,23 @@ function generateGuessSection() {
     contentGuessWord.appendChild(span);
   });
 }
+function wrongAnswer() {
+  indexImg++;
+  img.src = `assets/img/img${indexImg}.png`;
+
+  if (indexImg === 7) {
+    setTimeout(() => {
+      alert("PErdeu :(");
+      init();
+    }, 100);
+  }
+}
+
+function verifyLetter(letter) {
+  const arr = document.querySelectorAll(`[word =${letter}]`);
+
+  if (!arr.length) wrongAnswer();
+}
 
 function generateButtons() {
   contentBtns.textContent = "";
@@ -45,6 +62,7 @@ function generateButtons() {
     btn.onclick = () => {
       btn.disabled = true;
       btn.style.backgroundColor = "gray";
+      verifyLetter(letter);
     };
 
     contentBtns.appendChild(btn);
