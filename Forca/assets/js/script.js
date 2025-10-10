@@ -33,22 +33,40 @@ function generateGuessSection() {
     contentGuessWord.appendChild(span);
   });
 }
+
+//troca de imagem
 function wrongAnswer() {
   indexImg++;
   img.src = `assets/img/img${indexImg}.png`;
 
   if (indexImg === 7) {
     setTimeout(() => {
-      alert("PErdeu :(");
+      alert("Perdeu :(");
       init();
     }, 100);
   }
 }
 
+// verificação da letra
 function verifyLetter(letter) {
   const arr = document.querySelectorAll(`[word =${letter}]`);
 
   if (!arr.length) wrongAnswer();
+
+  //coloca a letra em sua posição
+  arr.forEach((e) => {
+    e.textContent = letter;
+  });
+
+  const spans = document.querySelectorAll(`.guessWord span`);
+  const won = !Array.from(spans).find((spans) => spans.textContent === "_");
+
+  if (won) {
+    setTimeout(() => {
+      alert("Ganhou!!!");
+      init();
+    }, 100);
+  }
 }
 
 function generateButtons() {
